@@ -1,0 +1,41 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Righteous';
+
+
+}
+
+
+.viewsProductos {
+  height: 100vh;
+}
+
+.enlacesProducto {
+  text-decoration: none;
+}
+
+
+.card {
+  width: 280px;
+}
+
+.card-img-top {
+  
+  height: 250px;
+  margin-top: -10px;
+}
+
+.card-img-top:hover {
+  scale: 1.1;
+}
+
+@media screen and (max-width:650px) {
+  .card-img-top {
+    height: 200px;
+  }
+}

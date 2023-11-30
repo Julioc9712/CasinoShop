@@ -1,0 +1,53 @@
+#Cree el proyecto con vite
+
+#Instale las dependencia 
+
+-npm install react-router-dom
+-npm install bootstrap bootstrap-icons
+-npm install @mui/material @emotion/react @emotion/styled
+-npm install @mui/material @mui/styled-engine-sc styled-components @mui/icons-material
+-npm i aos
+-npm i react-hook-form 
+
+#Cree carpetas dentro de src (components ,views,context,firebase,function)
+dichas carpetas son para organizar mejor el proyecto 
+
+#Dentro de components cree las carpetas de dichos componestes reutilizables para el proyecto
+carousel //componente de un slides de imagenes
+carritoCompra // pagina donde almacenara productos de compra de un usuarios
+celulares // pagina donde se vendran los productos de celulares
+electrodomesticos //  pagina donde se vendran los productos de electrodomesticos
+motos //pagina donde se vendran los productos de motos
+footer // pie de pagina 
+formInicio // pagina con el formulario de iniciar sesion 
+formRegistro //pagina con el formulario de crear un usuarios
+info // componentede informacion de la tienda
+contacto // pagina con el formulario de contactar al admind de la pagina
+nav // componentede barra de navegacion de la tienda
+novedades // componente de novedades de producto en la tienda
+perfil // pagina donde se vera el perfil de cada usuario
+productos 
+search // componente de buscador  de producto en la tienda
+
+
+
+#Dentro el context se crearan dicho contextos que globalizaran la aplicacion 
+userContext // contexto de globalizara en la aplicacion el usuario ,dentro tendremos las funciones de inicio registro y cierre de sesion
+
+#En firebase configuraremos esta api para conectarnos a ella
+firebaseConfing // va tener la configuracion de la api y exportaremos la funcion que conecta con la api que es getAuth y la de la base de datos que es getFirestore
+
+#En function crearemos las funciones de la tienda con el objetivo de tener mejor organizacion
+crearemos unos custom hook para tener las funciones de manera organizadas
+
+#Funciones que va tener el proyecto
+-Autentificacion de usuarios // va estar dentro del conxtect
+-Base de datos de Productos
+-Base de dato de Carrito personal va ser una lista dentro del carrito de cada usuario por id
+-Base de Datos de ventas
+
+
+
+
+Contrasena de stripe 
+Julioc08903.

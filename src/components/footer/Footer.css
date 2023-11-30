@@ -1,0 +1,83 @@
+footer{
+   height: max-content;
+}
+.container-footer {
+    position: static;
+    bottom: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 175px;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    margin-top: 10rem;
+
+}
+
+
+.logo-whatapp a img {
+    width: 40px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-size: 35px;
+
+}
+
+
+.container-footer ul li{
+    list-style: none;
+    text-align:left;
+}
+
+.container-footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.container-footer a:hover {
+    color: #295ba7;
+}
+
+
+
+.footer-redes li {
+    list-style: none;
+  
+}
+.redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+.redes li a i{
+    font-size: 20px;
+}
+.container-footer h5{
+    font-weight: bold;
+}
+
+@media screen and (max-width:670px) {
+    .container-footer{
+        justify-content: left;
+    }
+    .container-footer a {
+         font-size: 13px;
+    }
+    .container-footer h5{
+        font-size: 14px;
+       
+    }
+    .container-footer a i {
+        font-size: 12px;
+    }
+    .redes li a i{
+        font-size: 17px;
+        
+    }
+  
+}

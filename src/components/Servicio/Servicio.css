@@ -1,0 +1,74 @@
+.contenedorServicio{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 10rem auto 10rem auto;
+}
+
+.contenedor-servicio{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 30px;
+    width: 100%;
+    border-radius: 5px;
+}
+.contenedor-servicio img{
+    width: 400px;
+    border-radius: 10px;
+}
+
+.contenedor-servicio ul li{
+    width: 70%;
+}
+
+.clienteServicios h2{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.imgServicios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    padding: 10px;
+}
+.imgServicios a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    
+}
+
+.imgServicios img{
+    width: 300px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width:800px) {
+    .contenedor-servicio h5{
+        font-size: 18px;
+    }
+    .contenedor-servicio ul li{
+        width: 100%;
+    }
+    .contenedor-servicio img{
+        width: 250px;
+       
+    }
+}
+
+@media screen and (max-width:600px){
+    .contenedor-servicio{
+        display: block;
+    }
+    .contenedor-servicio img{
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}

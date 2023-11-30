@@ -1,0 +1,152 @@
+.contenedor-li {
+    margin-top: 5rem;
+    border-bottom: 1px solid #bebebe;
+}
+
+.buttomBarra {
+    z-index: 99;
+    margin-left: 10px;
+
+}
+
+.buttomBarra button {
+    border: transparent;
+    background-color: transparent;
+
+}
+
+.buttomBarra button i {
+    font-size: 25px;
+}
+
+.barra-lateral {
+    opacity: 0;
+    background-color: #ebedee;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    -webkit-animation-name: slideOutLeft;
+    animation-name: slideOutLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideOutLeft {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideOutLeft {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+
+
+.barra-lateral-visible {
+
+    background-color: #ebedee;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+}
+
+.categoria-productos {
+    background-color: #ebedee;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    width: 140px;
+
+}
+
+.categoria-productos a {
+    margin-right: 2rem;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+
+}
+
+.categoria-productos a:hover {
+    color: #295ba7;
+}
+
+.nav-item {
+    list-style: none;
+    
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+}
+
+/* details summary {
+    list-style: none;
+} */
+.EnlaceTienda{
+    margin-right: 10px;
+}
+.EnlaceTienda a{
+    text-decoration: none;
+    color: black;
+}
+.EnlaceTienda a:hover{
+    color: #295ba7;
+}

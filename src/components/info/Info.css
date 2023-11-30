@@ -1,0 +1,59 @@
+ 
+
+.contenedor-info {
+    text-align: center;
+    margin-top: 3rem;
+    width: 100%;
+
+}
+
+.contenedor-info h1 {
+    margin-bottom: 4rem;
+    font-size: 24px;
+}
+
+.Info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.Info img {
+    width: 450px;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 10px #64c1ff);
+
+}
+
+.textoInfo{
+    width: 30%;
+    height: 150px;
+    
+    
+    
+
+}
+.textoInfo p{
+    font-size: 25px;
+    color: #295ba7;
+    font-weight: 550;
+    
+}
+
+@media screen and (max-width:800px) {
+    .textoInfo  {
+        width: 90%;
+    }
+    .textoInfo p{
+        font-size: 23px;
+    }
+
+    .Info {
+        flex-direction: column;
+    }
+    .Info img{
+        width: 90%; 
+    }
+}

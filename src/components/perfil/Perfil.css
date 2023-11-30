@@ -1,0 +1,131 @@
+.conteainer-perfil {
+    margin-top: 10rem;
+    display: flex;
+    gap: 5rem;
+}
+
+
+.list-group a {
+    text-decoration: none;
+    color: black;
+}
+
+.list-group a:hover {
+    color: #3561ee;
+}
+
+
+.contenedor-enlacesPerfil {
+    border-right: 2px solid rgb(139, 139, 139);
+    width: 200px;
+    height: 500px;
+    padding: 10px;
+    margin-top: -1.5rem;
+}
+.contenedor-enlacesPerfil p{
+    font-size: 14px;
+}
+
+.contenedorDatosImg {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+.contenedor-datosPerfil {
+    width: 40%;
+}
+
+
+.modalEdit {
+    margin-top: 10rem;
+    margin-bottom: 82vh;
+}
+
+.form-label {
+    color: #3561ee;
+}
+.form-control{
+    height: 40px;
+    background-color: rgb(241, 243, 245);
+}
+.date {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.foto-perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -90px;
+   
+}
+
+.foto-perfil img {
+    width: 300px;
+    height: 300px;
+}
+
+.img-perfilPeque {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.fileImg {
+    color: transparent;
+    width: 165px;
+    margin-top: 5px
+}
+
+.editImagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1px;
+}
+
+.modalLoading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (max-width: 760px){
+    .foto-perfil img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .contenedor-enlacesPerfil {
+        height: 80vh;
+    }
+
+    .conteainer-perfil {
+        gap: 1rem;
+    }
+
+    .contenedorDatosImg {
+        flex-direction: column-reverse;
+        gap: 1rem;
+        margin-top: 5rem;
+    }
+
+    .contenedor-datosPerfil {
+        width: 80%;
+    }
+    .foto-perfil img {
+        width: 200px;
+        height: 200px;
+    }
+
+}

@@ -1,0 +1,158 @@
+.navLateralVisible {
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 3680px;
+    z-index: 100;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.navLateral {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3680px;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    z-index: 100;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    -webkit-animation-name: slideOutLeft;
+    animation-name: slideOutLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideOutLeft {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideOutLeft {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+.abrirMenu {
+    position:fixed;
+    top: 0;
+    z-index: 99;
+    background-color: transparent;
+    color: black;
+    border: transparent;
+    font-size: 30px;
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+
+}
+
+.cerrar-menu {
+    display: block;
+    background-color: transparent;
+    color: black;
+    border: transparent;
+    font-size: 25px;
+    margin: 1rem;
+    
+}
+
+.logoRegistro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enlacesRegistro {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    padding: 5px;
+}
+
+.enlacesRegistro a {
+    text-decoration: none;
+    color: black;
+}
+
+.enlacesRegistro a:hover {
+    color: #295ba7;
+}
+
+.navItem {
+    display: flex;
+    justify-content: left;
+    gap: 3rem;
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.navItem a {
+    text-decoration: none;
+    color: black;
+}
+
+.navItem a:hover {
+    color: #295ba7;
+}
+
+details summary:hover {
+    color: #295ba7;
+}
