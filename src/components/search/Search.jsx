@@ -29,7 +29,13 @@ function Search() {
   }
 
   function buscador() {
-    navigate(`/producto/${inputValue}`)
+    const isVerificProduct=buscarProducto.find(product => (product.id === inputValue))
+     if (isVerificProduct){
+      navigate(`/producto/${inputValue}`)
+    }else{
+      navigate('/producto/error')
+    }
+    
   }
   return (
     <>

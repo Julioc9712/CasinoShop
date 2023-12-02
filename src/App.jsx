@@ -25,7 +25,7 @@ import CheckoutView from './views/CheckoutView/checkoutView.jsx'
 import ViewTiendaInfo from './views/TiendaInfo/viewTiendaInfo.jsx'
 import ViewPagoCompletado from './views/PagoCompletado/viewPagoCompletado.jsx'
 import ViewPedido from './views/Pedidos/ViewPedido.jsx'
-
+import ViewPaginaError from './views/PaginaErrorView/ViewPaginaError.jsx'
 
 
 
@@ -76,6 +76,10 @@ function App() {
     {
       path: "producto/:id",
       element: <ViewProducto />
+    },
+    {
+      path: '/producto/error',
+      element: <ViewPaginaError/>
     },
     {
       path: "/checkout",
