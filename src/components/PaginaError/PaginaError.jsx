@@ -7,7 +7,7 @@ function PaginaError() {
     <section className="page_404">
               <div className="four_zero_four_bg">
                 <h1 className="text-center ">404</h1>
-                <img src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" alt="" />
+                <img src="/images/dribbble_1.gif" alt="" />
 
               </div>
 
