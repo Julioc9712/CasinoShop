@@ -9,8 +9,9 @@ function Info() {
   useEffect(() => {
     const options = {
       strings: ["Descubre la tienda online CasinoShop, donde encontrarás una gran variedad de electrodomésticos, motos y celulares.", "Disfruta de la comodidad de comprar desde casa y aprovecha nuestras increíbles promociones"],
-      typeSpeed: 40,
+      typeSpeed: 50,
       backSpeed: 40,
+      backDelay:4000,
       loop: true,
       showCursor: false
     };

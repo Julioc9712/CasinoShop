@@ -15,7 +15,7 @@ function Carousel() {
                         <img src="/images/electrdomesticoPortada.jpg" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="images/motosPortada.png" className="d-block w-100" alt="..." />
+                        <img src="images/motosPortada.jpg" className="d-block w-100" alt="..." style={{border:'3px solid rgb(217, 217, 217)'}}/>
                     </div>
                     <div className="carousel-item">
                         <img src="/images/celularesPortada.jpg" className="d-block w-100" alt="..." />

@@ -19,12 +19,11 @@ header {
     text-decoration: none;
 }
 .TiendaNombre{
+    margin-top: 10px;
     margin-left: -13px;
     color: linear-gradient( 270.3deg,  rgba(84,212,228,1) 0.2%, rgb(164, 68, 36) 100% );
     font-size: 20px;
     font-family: 'Black Ops One';
-
-   
 }
 
 .logo {    

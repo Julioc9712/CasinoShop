@@ -59,7 +59,7 @@ function CardProductosVendidos({ productoMasVendidos }) {
                 <img src={product.Img} className="card-img-top " alt={product.Nombre} />
               </Link>
               <CardContent sx={{padding:'10px'}}>
-                <Link to={`/producto/${product.id}`} style={{ textDecoration: 'none', fontSize: '14px', color: 'black', width: '100%', fontWeight: '500' }}>
+                <Link to={`/producto/${product.id}`} style={{ textDecoration: 'none', fontSize: '13px', color: 'black', width: '100%', fontWeight: '500' }}>
                   {product.Subtitulo}
                 </Link>
               </CardContent>

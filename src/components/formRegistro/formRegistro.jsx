@@ -1,47 +1,74 @@
-import  React,{ useState, useContext }  from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 //Material UI
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { EmailAuthProvider, fetchSignInMethodsForEmail, SignInMethod } from "firebase/auth";
 import { AuthContext } from '../../context/userContext';
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase/firebaseConfig"
+import { Alert } from '@mui/material';
+import getUsuarios from '../../function/getUsuarios';
+
+
 
 
 const defaultTheme = createTheme();
 
 export default function SignUp() {
 
-    const auth = useContext(AuthContext)
+    const authUser = useContext(AuthContext)
 
+    const [creandoUser, setCreandoUser] = useState(false)
+    const [errorRegister, setErrorRegister] = useState(false)
+    const [emailExiste, setEmailExiste] = useState(false)
+    const [verificacionEmail, setVerificacionEmail] = useState("")
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [telefono, setTelefono] = useState("")
-    const [date,setDate]=useState("")
+    const [date, setDate] = useState("")
     const navigate = useNavigate()
 
 
-
+    useEffect(() => {
+        async function getUsuariosEmail() {
+            const usuarioEmail = await getUsuarios()
+            setVerificacionEmail(usuarioEmail)
+        }
+        getUsuariosEmail()
+    }, [])
 
 
     const registerUser = async (e) => {
-        e.preventDefault();
-        auth.register(email, password,firstName,lastName,telefono,date);
-        navigate('/');
-       
-    }
+        e.preventDefault()
+        if (verificacionEmail.find(item => item.email === email)) {
+            setEmailExiste(true);
+        } else {
+            setEmailExiste(false)
+            if (password.length >= 8) {
+                setCreandoUser(true)
+                await authUser.register(email, password, firstName, lastName, telefono, date);
+                setTimeout(() => {
+                    navigate('/');
+                }, 1000);
 
+            } else {
+                setErrorRegister(true);
+            }
+        }
+
+    }
 
 
     return (
@@ -65,21 +92,21 @@ export default function SignUp() {
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5" color='#295ba7'>
-                        Sign up
+                        Registrar Usuario
                     </Typography>
                     <Box component="form" noValidate onSubmit={registerUser} sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
                                 <TextField
                                     sx={{ backgroundColor: 'white', }}
-                                    autoComplete="given-name"
-                                    name="firstName"
+
+                                    name="Nombre"
                                     required
                                     fullWidth
                                     value={firstName}
                                     onChange={e => { setFirstName(e.target.value) }}
                                     id="firstName"
-                                    label="First Name"
+                                    label="Nombre"
                                     autoFocus
                                 />
                             </Grid>
@@ -91,9 +118,9 @@ export default function SignUp() {
                                     value={lastName}
                                     onChange={e => { setLastName(e.target.value) }}
                                     id="lastName"
-                                    label="Last Name"
+                                    label="Apellidos"
                                     name="lastName"
-                                    autoComplete="family-name"
+
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -103,13 +130,17 @@ export default function SignUp() {
                                     fullWidth
                                     value={email}
                                     onChange={e => { setEmail(e.target.value) }}
+                                    type='email'
                                     id="email"
-                                    label="Email Address"
+                                    label="Direccion de Correo"
                                     name="email"
-                                    autoComplete="email"
+
                                 />
                             </Grid>
-                            
+
+                            {emailExiste ? <Grid item xs={12}> <Alert severity="error">Este correo ya esta en uso</Alert>
+                            </Grid> : " "}
+
                             <Grid item xs={12}>
                                 <TextField
                                     sx={{ backgroundColor: 'white', }}
@@ -118,16 +149,22 @@ export default function SignUp() {
                                     value={password}
                                     onChange={e => { setPassword(e.target.value) }}
                                     name="password"
-                                    label="Password"
+                                    label="Contraseña"
                                     type="password"
                                     id="password"
-                                    autoComplete="new-password"
+
                                 />
                             </Grid>
+
+                            {errorRegister ? <Grid item xs={12}> <Alert severity="error">Su contraseña debe tener al menos 8 caracteres</Alert>
+                            </Grid> : " "}
+
+
                             <Grid item xs={12} sm={6}>
                                 <TextField
                                     sx={{ backgroundColor: 'white', }}
-                                    autoComplete="given-name"
+
+                                    type='tel'
                                     name="telefono"
                                     required
                                     fullWidth
@@ -135,38 +172,50 @@ export default function SignUp() {
                                     onChange={e => { setTelefono(e.target.value) }}
                                     id="telefono"
                                     label="Telefono"
-                                    type='tel'
-                                    
+
+
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6}>
                                 <TextField
                                     sx={{ backgroundColor: 'white', }}
-                                    autoComplete="given-name"
+
                                     name="date"
+                                    label="Cumpleaños"
                                     required
                                     fullWidth
                                     value={date}
                                     onChange={e => { setDate(e.target.value) }}
                                     id="date"
                                     type='date'
-                                    
+
                                 />
                             </Grid>
-                            
+
                         </Grid>
-                        <Button
-                            onSubmit={registerUser}
+                        {creandoUser ? <Button
+
                             type="submit"
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
+                            disabled
                         >
-                            Sign Up
+                            Registrando...
                         </Button>
+                            :
+                            <Button
+                                onSubmit={registerUser}
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                sx={{ mt: 3, mb: 2 }}
+                            >
+                                Registrar
+                            </Button>}
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link to="/login" variant="body2" style={{textDecoration:'none'}}>
+                                <Link to="/login" variant="body2" style={{ textDecoration: 'none' }}>
                                     Ya tiene una cuenta? Inicia Sesion
                                 </Link>
                             </Grid>

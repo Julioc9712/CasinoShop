@@ -56,6 +56,7 @@ function ProductoCarro() {
         } else {
             contextCarro.EliminarProducto(product.id)
         }
+        console.log(product)
     }
 
     function checkout() {
@@ -70,7 +71,7 @@ function ProductoCarro() {
     return (
         <div >
             <div className='contenedor-carrito'>
-                <h1 style={{color:'#295ba7'}}>Carrito de Compra</h1>
+                <h1 style={{ color: '#295ba7' }}>Carrito de Compra</h1>
                 <Grid container spacing={3} sx={{ marginTop: '5rem' }}>
                     <Grid item xs={12} sm={8} md={9} container spacing={2} >
                         {carrito.map(product => (
@@ -111,14 +112,14 @@ function ProductoCarro() {
                         ))}
 
                     </Grid>
-                    <Grid item xs={12} sm={4} md={3} sx={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+                    <Grid item xs={12} sm={4} md={3} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                         <Typography fontSize="20px" fontFamily='Righteous' >
                             Total Productos: <Typography variant='p' color='blue'> {contextCarro.CantidadItem()}</Typography>
                         </Typography>
                         <Typography fontSize="20px" fontFamily='Righteous'>
                             Precio Total: <Typography variant='p' color='red'>${contextCarro.PrecioTotal()} </Typography>
                         </Typography>
-                        <Button variant="contained" endIcon={<SendIcon />} onClick={checkout} sx={{fontFamily: 'Righteous'}}>
+                        <Button variant="contained" endIcon={<SendIcon />} onClick={checkout} sx={{ fontFamily: 'Righteous' }}>
                             Realizar Compra
                         </Button>
                     </Grid>

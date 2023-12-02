@@ -86,6 +86,12 @@ export default function CarritoProvider({ children }) {
                 ? { ...item, Cantidad: item.Cantidad - 1 }
                 : item
             )
+            async function perfilUsuarioEdit() {
+                const usuarioEdit = doc(db, 'usuarios', auth.user.uid)
+                const docRef = await setDoc(usuarioEdit, { ...usuario, carrito: [...productos] })
+
+            }
+            return perfilUsuarioEdit()
         }
     }
 

@@ -10,6 +10,7 @@ import { storage } from '../../firebase/firebaseConfig'
 //Material UI
 import { Button } from '@mui/material';
 import LoadingModal from './LoadinModal';
+import { Link } from 'react-router-dom';
 
 
 
@@ -69,8 +70,8 @@ function InfoPerfil({ editPerfil, userRef }) {
                 <p>{userRef.nombre} {userRef.apellidos}</p>
                 <hr />
                 <ul className="list-group">
-                    <li className="list-group-item"><a href="/pedidos">Pedidos</a></li>
-                    <li className="list-group-item"><a href="/carrito">Carrito</a></li>
+                    <li className="list-group-item"><Link to="/pedidos">Pedidos</Link></li>
+                    <li className="list-group-item"><Link to="/carrito">Carrito</Link></li>
 
                 </ul><br />
                 <button type="button" className="btn btn-danger" onClick={cerraSesion}><a href="/" style={{textDecoration:'none',color:'white'}}>Cerrar Sesion</a></button>

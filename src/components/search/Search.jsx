@@ -26,19 +26,16 @@ function Search() {
       setShowOptions(false);
       setInputValue(e.target.value)
     }
-  };
+  }
 
   function buscador() {
-
     navigate(`/producto/${inputValue}`)
-
-
   }
   return (
     <>
       <div >
         <form className='search' onSubmit={buscador}>
-          <input type="text" placeholder='¿Qué estás buscando?' list='productos' value={inputValue} onChange={handleChange} />
+          <input type="text" placeholder='¿Qué estás buscando?'  list='productos' value={inputValue} onChange={handleChange}   />
           <button onClick={buscador} className='btn'><i className="bi bi-search"></i></button>
 
           {showOptions &&
