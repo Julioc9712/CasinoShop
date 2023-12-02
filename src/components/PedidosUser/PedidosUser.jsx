@@ -31,7 +31,7 @@ function PedidosUser() {
         <div className="contenedorPedidos" >
             <h2 style={{ textAlign: 'center', marginBottom: '7rem', marginTop: '5rem' }}>Pedidos Completados</h2>
 
-            {pedidoUserId.map(infoPedido => (
+            {pedidoUserId.slice(1).map(infoPedido => (
                 <Grid item xs={6} sm={6} md={4} lg={2.4} key={infoPedido} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '5rem' }}>
                     <Paper className='paperPedidos' >
                         <div className='fechaPedidoInfo'>
