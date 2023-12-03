@@ -15,7 +15,7 @@ function Footer() {
                         <h5>Menu</h5>
                         <li><Link to="/">Inicio</Link></li>
                         <li><Link to="/motos">Motos-Accesorios</Link></li>
-                        <li><Link to="celulares">Celulares</Link></li>
+                        <li><Link to="/celulares">Celulares</Link></li>
                         <li><Link to="/electrodomestico">Electrodomesticos</Link></li>
 
                     </ul>
