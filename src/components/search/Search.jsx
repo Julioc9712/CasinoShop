@@ -37,27 +37,25 @@ function Search() {
   }
 
   function buscador(e) {
-    //   const isVerificProduct=buscarProducto.find(product => (product.id === inputValue))
-    //    if (isVerificProduct){
-    //     navigate(`/producto/${inputValue}`)
-    //   }else{
-    //     navigate('/producto/error')
-    //   }
+      const isVerificProduct=buscarProducto.find(product => (product.id === inputValue))
+       if (isVerificProduct){
+       navigate(`/producto/${inputValue}`)
+       }else{
+        navigate('/producto/error')
+       }
 
-    e.preventDefault()
-    const options = {
-      keys: ['id'], // Campo en el que se buscará
-      threshold: 1.0, // Umbral de coincidencia
-    }
-    const fuse = new Fuse(itemId(), options);
-    const resultado = fuse.search(inputValue)
-    if (resultado[0] !== undefined) {
-      navigate(`/producto/${resultado[0].item.id}`)
-    } else {
-      navigate('/producto/error')
-    }
-    console.log(resultado[0].item.id)
-
+   
+    //const options = {
+    //  keys: ['id'], // Campo en el que se buscará
+   //  threshold: 1.0, // Umbral de coincidencia
+    //}
+    //const fuse = new Fuse(itemId(), options);
+   // const resultado = fuse.search(inputValue)
+   // if (resultado[0] !== undefined) {
+   //   navigate(`/producto/${resultado[0].item.id}`)
+   // } else {
+  //navigate('/producto/error')
+  //}
   }
 
   return (
