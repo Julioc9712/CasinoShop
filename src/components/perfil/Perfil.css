@@ -89,8 +89,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 1px;
+    gap: 2px;
 }
 
 .modalLoading {

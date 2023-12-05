@@ -28,9 +28,10 @@ export default function Checkout() {
  
   function pedidoUserInfo(data) {
     setInfoPedido(data)
+    
   }
 
-  
+  console.log(infoPedido)
 
   const Form = () => activeStep === 0 ? <AddressForm handleNext={handleNext} pedidoUserInfo={pedidoUserInfo} />
     : <PaymentForm handleBack={handleBack} infoPedido={infoPedido}/>

@@ -1,27 +1,29 @@
-
-.contenedorPedidos{
+.contenedorPedidos {
     margin-top: 10rem;
     margin-bottom: 10rem;
-   min-height: 48vh;
-  
+    min-height: 48vh;
+
 }
-.paperPedidos{
-    width:90%;
+
+.paperPedidos {
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
     border: 2px solid ghostwhite;
 }
-.fechaPedidoInfo{
+
+.fechaPedidoInfo {
     width: 250px;
 }
-.fechaPedidoInfo h4{
+
+.fechaPedidoInfo h4 {
     font-size: 20px;
 }
 
-@media screen and (max-width :650px ) {
-    .paperPedidos{
-        flex-direction:column ;
+@media screen and (max-width :650px) {
+    .paperPedidos {
+        flex-direction: column;
     }
 }

@@ -9,13 +9,6 @@ function PedidosUser() {
 
 
 
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(true)
-        }, 5000);
-    }, [])
-
-
     const getPedidoUser = async () => {
         const pedidoRef = await getPedidos()
         setPedidoUserId(pedidoRef)
@@ -32,8 +25,8 @@ function PedidosUser() {
             <h2 style={{ textAlign: 'center', marginBottom: '7rem', marginTop: '5rem' }}>Pedidos Completados</h2>
 
             {pedidoUserId.slice(1).map(infoPedido => (
-                <Grid item xs={6} sm={6} md={4} lg={2.4} key={infoPedido} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '5rem' }}>
-                    <Paper className='paperPedidos' >
+                <Grid item xs={6} sm={6} md={4} lg={2.4} key={infoPedido.id} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '5rem' }}>
+                    <Paper className='paperPedidos'  >
                         <div className='fechaPedidoInfo'>
                             <h4>{new Date(infoPedido.date.seconds * 1000).toLocaleString()}</h4>
                             <p><strong>Nombre:</strong> {infoPedido.datosUser.firstName} {infoPedido.datosUser.lastName}</p>
@@ -42,7 +35,7 @@ function PedidosUser() {
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'space-around', width: '100%', gap: '2rem', flexWrap: 'wrap' }}>
                             {infoPedido.pedido.map(item => (
-                                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
+                                <div key={item.Nombre} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
 
                                     <div>
                                         <p>{item.Categoria}</p>

@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 
 function PagoCompleto() {
   return (
-    <div style={{ marginTop: '15rem', display: 'flex', justifyContent: 'center' }}>
+    <div style={{minHeight: "38vh"}}>
+        <div style={{ marginTop: '15rem', display: 'flex', justifyContent: 'center' }}>
       <Paper style={{ width: '80%', padding: '20px' }}>
         <Typography variant="h5" gutterBottom marginBottom='1rem'>
           Gracias por tu compra 😁❤
@@ -24,6 +25,8 @@ function PagoCompleto() {
 
 
     </div>
+    </div>
+    
   )
 }
 

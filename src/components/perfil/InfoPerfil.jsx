@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react'
+import React, { useState, useContext } from 'react'
 
 import { AuthContext } from '../../context/userContext';
 //Firestor-Config
@@ -17,15 +17,24 @@ import { Link } from 'react-router-dom';
 
 function InfoPerfil({ editPerfil, userRef }) {
     const auth = useContext(AuthContext)
-    
+
     const [editImg, setEditImg] = useState(true)
     const [editando, setEditando] = useState(false)
     const [fileImg, setFileImg] = useState("")
+    const [fileValid, setFileValid] = useState(false)
 
+    function fileChange(e) {
+        setFileValid(true)
+        setFileImg(e.target.files[0])
+    }
+    function cancelarEditImg() {
+        setEditImg(true)
+        setFileImg(" ")
+        setFileValid(false)
+    }
 
     function cerraSesion() {
         auth.logout()
-   
     }
 
     function handleClick() {
@@ -34,7 +43,6 @@ function InfoPerfil({ editPerfil, userRef }) {
     function editarImagen() {
         setEditImg(!editImg)
     }
-
 
     async function imgStorage(file) {
         const storageRef = ref(storage, userRef.nombre)
@@ -48,16 +56,14 @@ function InfoPerfil({ editPerfil, userRef }) {
             setEditando(false)
             setEditImg(!editImg)
         }, 20000);
-
+        setFileValid(false)
         async function CambiarImg() {
             const urlImg = await imgStorage(fileImg)
             const usuarioEdit = doc(db, 'usuarios', auth.user.uid)
             const docRef = await setDoc(usuarioEdit, { ...userRef, img: urlImg })
-
         }
         CambiarImg()
         setEditando(true)
-
     }
 
 
@@ -74,7 +80,7 @@ function InfoPerfil({ editPerfil, userRef }) {
                     <li className="list-group-item"><Link to="/carrito">Carrito</Link></li>
 
                 </ul><br />
-                <button type="button" className="btn btn-danger" onClick={cerraSesion}><a href="/" style={{textDecoration:'none',color:'white'}}>Cerrar Sesion</a></button>
+                <button type="button" className="btn btn-danger" onClick={cerraSesion}><a href="/" style={{ textDecoration: 'none', color: 'white' }}>Cerrar Sesion</a></button>
             </div>
             <div className='contenedorDatosImg'>
                 <div className='contenedor-datosPerfil'>
@@ -116,8 +122,10 @@ function InfoPerfil({ editPerfil, userRef }) {
                                 <Button variant="contained" sx={{ width: '200px', fontSize: '12px', marginTop: '5px', height: '40px' }} disabled>Guardando...<LoadingModal /></Button>
                                 :
                                 <div className='editImagen'>
-                                    <input type="file" className="fileImg" onChange={e => setFileImg(e.target.files[0])} />
-                                    <Button variant="contained" sx={{ width: '165px', fontSize: '12px', marginTop: '5px' }} onClick={completarEditPerfil}>Guardar Cambios</Button>
+                                    <div><input type="file" className="fileImg" onChange={e => fileChange(e)} />{fileValid ? <span>✅</span> : ""}</div>
+                                    <div style={{ display: 'flex', justifyContent: 'center', gap: '5px' }}><Button variant="contained" sx={{ width: '100px', fontSize: '12px', marginTop: '5px' }} onClick={completarEditPerfil}>Guardar</Button>
+                                        <Button variant="contained" sx={{ width: '100px', fontSize: '12px', marginTop: '5px' }} onClick={() => cancelarEditImg()}>Cancelar</Button></div>
+
                                 </div>}
 
                         </div>

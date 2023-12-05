@@ -41,7 +41,7 @@ function PaymentForm({ handleNext, handleBack, infoPedido }) {
     async function pedidos() {
       const collectionRef = collection(db, 'pedidos')
       const docRef = doc(collectionRef, authUser.user.uid)
-      const editPedido = await setDoc(docRef, {pedidoUser:[...pedidoCompra.pedidoUser,{datosUser: {...infoPedido}, pedido: [...contextCarro.carrito ], date:  new Date }]})
+      const editPedido = await setDoc(docRef, {pedidoUser:[...pedidoCompra.pedidoUser,{ id:crypto.randomUUID(),datosUser: {...infoPedido}, pedido: [...contextCarro.carrito ], date:  new Date }]})
     }
     
     setTimeout(() => {

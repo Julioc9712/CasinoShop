@@ -8,8 +8,14 @@ function NavLateral() {
   const [mostrar, setMostrar] = useState(false)
  
 
-  function handleSubmit() {
-    setMostrar(!mostrar);
+  function handleSubmitAbrir() {
+    setMostrar(true)
+  }
+  function handleSubmitCerrar() {
+  setMostrar(false)
+
+   
+
   }
   function cerraSesion() {
     auth.logout()
@@ -17,9 +23,9 @@ function NavLateral() {
   }
   return (
     <>
-      <button className='abrirMenu' id='abrir' onClick={handleSubmit} ><i className="bi bi-list"></i></button>
+      <button className='abrirMenu' id='abrir' onClick={handleSubmitAbrir} ><i className="bi bi-list"></i></button>
       <div className={mostrar ? 'navLateralVisible' : 'navLateral'}>
-        <button className='cerrar-menu' id='abrir' onClick={handleSubmit}><i className="bi bi-x-lg"></i></button>
+        <button className='cerrar-menu' id='abrir' onClick={handleSubmitCerrar}><i className="bi bi-x-lg"></i></button>
         {auth.user ?
           <div className='logoRegistro'>
             <Link to="/"><img src="/images/logoBarraLateral.png" alt="" /></Link>
