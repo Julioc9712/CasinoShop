@@ -32,10 +32,9 @@ function Footer() {
                 <div className='footer-redes'>
                     <h5>Redes</h5>
                     <div className='redes'>
-                        <li><Link to=''><i className="bi bi-instagram"></i></Link></li>
-                        <li><Link to=''><i className="bi bi-facebook"></i></Link></li>
-                        <li><Link to=''><i className="bi bi-github"></i></Link></li>
-                        <li><Link to=''><i className="bi bi-linkedin"></i></Link></li>
+                                 <li><Link to='https://www.facebook.com/julioc.mesaruiz' target='_blank'><i className="bi bi-facebook"></i></Link></li>
+                        <li><Link to='https://github.com/Julioc9712' target='_blank'><i className="bi bi-github"></i></Link></li>
+                        <li><Link to='https://www.linkedin.com/in/julio-cesar-mesa-ru%C3%ADz-490438282/' target='_blank'><i className="bi bi-linkedin"></i></Link></li>
                     </div>
 
                 </div>
